@@ -17,6 +17,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    font-family: Raleway;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -41,80 +42,377 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+* {
+    box-sizing: border-box;
+}
 
 /*   ----   End of reset   ---   */
-
+:root{
+    --primary-font-color: orange;
+}
 .mainGrid {
     display: grid;
-    grid-template-columns: 1.7fr 3fr 3fr 2fr;
+    grid-template-columns: 1.7fr 3fr 3.09fr 2fr;
 
-    border: 3px solid red;
-    background-color: rgb(252, 163, 163);
+    gap: 4px;
+    height: 100vh;
+
+    background-color: rgb(255, 255, 255);
 }
     .headerContainer {
         grid-column: 2 / 5;
 
         border: 3px solid rgb(50, 165, 236);
         background-color:rgb(146, 213, 255);
-        height: 18vh;
+        height: auto;
     }
         .headerGrid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: 2fr 3fr;
-            height: 17.4vh;
+            grid-column: 2 / 5;
+            height: auto;
 
-            border: 3px solid rgb(0, 0, 0);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr 3fr;
+            height: 100%;
+
             background-color:rgb(133, 133, 133);
         }
+        .headerFirst {
+            display: grid;
+            grid-template-columns: 0.4fr 8fr 0.4fr 0.4fr 1.2fr;
+            grid-template-rows: 5fr;
+
+            align-items: center;
+        }
+                .searchBar > * {
+                    width: 500px;
+                    height: 34px;
+                    border-radius: 10px;
+                    border: 0px;
+                }
+
+                .headerIcon {
+                height: 30px;
+                width: 30px;
+                align-self: center;
+                justify-self: center;
+                }
+                
+                .smallAvatar > img {
+                    width: 40px;
+                    height: 40px;
+                    display: block;
+                    justify-self: center;
+                    align-self: center;
+                    margin: auto;
+                }
+                .profileName {
+                justify-self: right;
+                margin-right: 19px;
+                }
+        .headerSecond {
+            display: grid;
+            grid-template-columns: 0.5fr 6fr 0.72fr 0.7fr 0.7fr;
+            grid-template-rows: 4fr 5fr;
+
+            padding-top: 5px;
+            justify-items: left;
+            background-color:rgb(180, 180, 180);
+        }
+            .mainAvatar{
+                grid-area: 1 / 1 / 3 / 2;
+                align-self: center;
+                justify-self: center;
+            }
+            .mainAvatar > img {
+                width: 60px;
+                height: 60px;
+            }
+            .greetingText{
+                grid-area: 1 / 2 / 2 / 3;
+                align-self: center;
+                margin-top: 20px;
+                margin-left: 10px;
+            }
+            .nameAndTag {
+                grid-area: 2 / 2 / 3 / 3;
+                align-self: center;
+                margin-bottom: 30px;
+                margin-left: 10px;
+                font-weight: 700;
+                font-size: 20px;
+                color: rgb(59, 59, 59);
+                        }
+            .newButton {
+                grid-area: 1 / 3 / 3 / 4;
+                justify-self: center;
+                align-self: center;
+                border-radius: 20px;
+                border: 0;
+                height: 50px;
+                width: 100px;
+                font-size: 14px;
+            }
+            .uploadButton {
+                grid-area: 1 / 4 / 3 / 5;
+                justify-self: center;
+                align-self: center;
+                border-radius: 20px;
+                border: 0;
+                height: 50px;
+                width: 100px;
+                font-size: 14px;
+            }
+            .shareButton {
+                grid-area: 1 / 5 / 3 / 6;
+                justify-self: center;
+                align-self: center;
+                border-radius: 20px;
+                border: 0;
+                height: 50px;
+                width: 100px;
+                font-size: 14px;
+            }
+            .shareButton:active{
+                box-shadow: 0px 0px 6px rgb(255, 255, 255);
+            }
+            
+
 
     .leftBarContainer {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
 
-        border: 3px solid blue;
-        background-color: rgb(100, 100, 255);
     }
         .leftBarGrid {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1.1fr 3fr 2fr;
+            grid-template-rows: 0.6fr 4fr 3fr;
             grid-auto-flow: column;
-            height: 98.2vh;
+            height: 100vh;
+            gap: 2vh;
+            align-items: center;
 
-            border: 3px solid rgb(0, 0, 0);
-            background-color:rgb(133, 133, 133);
+
+            background-color: grey;
         }
+        .leftBarGrid:hover{
+            background-color: rgb(184, 184, 184);
+            box-shadow: 3px 0px 5px white;
+            
 
-    .orangeContainer{
+        }
+            .dashHeroGrid {
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            align-items: center;
+            }
+                .dashLogo{
+                    height: 100px;
+                    width: 100px;
+                    margin-top: 25px;
+                    margin-left: 25px;
+                }
+                .dashHeroGrid > h1 {
+                    align-items: center;
+                    justify-self: left;
+                    font-weight: 500;
+                    font-size: 28px;
+                    margin-top: 25px;
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    color: rgb(63, 63, 63);                 }
+                    .dashFirstListGrid {
+            grid-row: 2 / 3;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: repeat(6, 50px);
+            }
+                .firstIcon{
+                height: 25px;
+                width: 25px;
+                align-self: center;
+                justify-self: right;
+                margin-right: 30px;
+                }
+                .firstText{
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: rgb(63, 63, 63);                 }
+            
+                .firstText:hover{
+                    color: white;
+                    text-shadow: 0px 0px 4.5px white;
+                }
+
+        .dashSecondListGrid {
+            grid-row: 3 / 4;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 50px 50px 50px;
+            align-items: center;
+        }
+            .secondIcon {
+                height: 25px;
+                width: 25px;
+                align-self: center;
+                justify-self: right;
+                margin-right: 30px;
+            }
+            .secondText {
+                font-size: 1.25rem;
+                font-weight: 500;
+                color: rgb(63, 63, 63);                 }
+
+
+    .middleContainer{
         grid-column: 2 / 4;
+        grid-row: 2 / 3;
 
-        border: 3px solid orange;
-        background-color: rgb(255, 218, 149);
-        height: 80.2vh;
+        background-color: rgb(228, 228, 228);
+        height: auto;
+        
     }
+
+        .middleTitle{
+            grid-row: 1 / 2;
+            margin-left: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .middleGrid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 430px;
+            gap: 15px;
+            height: 74vh;
+            column-gap: 10px;
+            overflow-y: scroll;
+            align-items: center;
+            justify-items: center;
+        }
+            .card {
+                height: 400px;
+                width: 295px;
+                background-color:rgb(255, 255, 255);
+
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1.5fr 5fr 1fr;
+                box-shadow: 3px 3px 8px rgb(180, 180, 180);
+                border-left: 2px solid black;
+                border-radius: 4px;
+            }
+            .card:hover{
+                box-shadow: 3px 3px 8px rgb(138, 138, 138);
+                
+            }
+                .card > h3 {
+                    padding: 20px;
+                    justify-content: space-around;
+                    grid-row: 1 / 2;
+                    font-weight: 700;
+                    font-size: 25px;
+                    color: rgb(73, 73, 73);
+
+                }
+                .card > p {
+                    padding: 20px;
+                    grid-row: 2 / 3;
+                    line-height: 2.7vh;
+                }
+                .card > .cardIconContainer {
+                    padding: 12px;
+                    margin-right: 8px;  
+                    display: flex;
+                    flex-direction: row-reverse;
+                    gap: 10px;
+                }
+                .cardIcon1,
+                .cardIcon2,
+                .cardIcon3 {
+                    height: 25px;
+                    width: 25px;    
+                }
+
+
+
 
     .rightBarContainer {
         grid-column: 4 / 5;
         grid-row: 2 / 3;
 
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-auto-flow: column;
-
-        border: 3px solid teal;
-        background-color: rgb(142, 255, 255);
+        grid-template-rows: 1fr 5fr 1fr 5fr;
+        gap: 12px;
+        align-items: center;
+        background-color: grey;
+        height: auto;
     }
-
-        .greenContainer {
+        .announcementTitle{
             grid-row: 1 / 2;
-
-            border: 3px solid rgb(0, 209, 28);
-            background-color: rgb(136, 255, 166);
+            margin-left: 20px;
+            margin-top: 24px;
+            margin-bottom: 15px;
+            color: rgb(63, 63, 63);                 
+            align-self: center; 
+            font-size: 20px;
+            justify-self: center;
         }
-        .purpleContainer {
+        .announcementGrid {
             grid-row: 2 / 3;
-
-            border: 3px solid rgb(153, 0, 255);
-            background-color: rgb(205, 131, 255);
+            gap: 15px;
+            background-color: rgb(211, 211, 211);
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 30vh;
+            overflow-y: scroll;
+            padding: 30px;
+            width: 36vh;
+            justify-self: center;
         }
+            .announcement {
+                height: 100px;
+                padding: 8px;
+            }
+         
+            body::-webkit-scrollbar {
+                width: 4px;               /* width of the entire scrollbar */
+              }
+            
+        .trendingTitle{
+            grid-row: 3 / 4;
+            margin-top: 30px;
+            align-self: center; 
+            font-size: 20px;
+            justify-self: center;
+            color: rgb(63, 63, 63);                 }
+
+        
+        .trendingGrid {
+            grid-row: 4 / 5;
+
+            gap: 15px;
+            background-color: rgb(211, 211, 211);
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 30vh;
+            overflow-y: scroll;
+            padding: 30px;
+            width: 36vh;
+            justify-self: center;
+        }
+            .trend{
+                height: 80px;
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                align-items: center;
+            }
+                .trendIcon {
+                    grid-column: 1 / 2;
+                }
+                .trendText {
+                    grid-column: 2 / 3;
+                }
